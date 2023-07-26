@@ -1,0 +1,18 @@
+{
+  "name": "nodejs-api",
+  "version": "1.0.0",
+  "description": "first nodejs project ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "helloworld"
+  ],
+  "author": "pablohsz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
