@@ -1,21 +1,23 @@
 const express = require('express');
 const router = express.Router();
+const dao = require('../dao/userDao');
+const { user } = require('../dbconfig');
 
 
-router.get('/', (req, res, next)=> {
+router.get('/', async (req, res, next)=> {
+
+    let users = await dao.selectUsers();
+
     res.status(200).send({
-        mensagem: 'Usando o GET dentro da rota de usuários'
+        mensagem: 'Usando o GET dentro da rota de usuários',
+        users: users
     });
 });
 
 
-router.post('/', (req, res, next)=> {
+router.post('/', async (req, res, next)=> {
    
-    const user ={
-        username: req.body.username,
-        name: req.body.name
-    }
-
+    let user = await dao.insertUser(req.body.username, req.body.password, req.body.nick);
     
     res.status(201).send({
         mensagem: 'Usando o POST dentro da rota de produtos',

@@ -1,7 +1,7 @@
 const pg = require('../pg');
 
 
-async function selectCreator(){
+async function selectCreators(){
     await pg.connect();
     let result = await pg.query('SELECT * FROM creators;');
     return result.rows;
@@ -9,5 +9,5 @@ async function selectCreator(){
 
 
 module.exports = {
-    selectCreator
+    selectCreators
 };

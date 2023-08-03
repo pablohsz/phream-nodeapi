@@ -6,7 +6,7 @@ const dao = require('../dao/creatorDao');
 
 router.get('/', async (req, res, next)=> {
 
-    let creators = await dao.selectCreator();
+    let creators = await dao.selectCreators();
 
     res.status(200).send({
         mensagem: 'Usando o GET dentro da rota de criadores',
